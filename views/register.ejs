@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="/registerStyle.css">
+  <link rel="shortcut icon" type="image/png" href="/images/icon/apple-touch-icon.png">
+</head>
+<body>
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn"></div>
+      <a href="/login" class="toggle-btn">Log In</a>
+      <button type="button" class="toggle-btn" style="color: #fff;">Register</button>
+    </div>
+
+    <div class="social-icons">
+      <img src="/images/icon/fb2.png">
+      <img src="/images/icon/insta2.png">
+      <img src="/images/icon/tt2.png">
+    </div>
+
+    <form action="/register" method="POST" class="input-group">
+      <input class="input-field" type="text" name="name" placeholder="Full Name" required />
+      <input class="input-field" type="text" name="username" placeholder="Username" required />
+      <input class="input-field" type="email" name="email" placeholder="Email" required />
+      <input class="input-field" type="password" name="password" placeholder="Password" required />
+      <input class="input-field" type="password" name="confirmPassword" placeholder="Confirm Password" required />
+      <button type="submit" class="submit-btn reg-btn">Register</button>
+    </form> 
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

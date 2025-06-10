@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" type="png" href="images/icon/apple-touch-icon.png">
+  <title>Login SignUp</title>
+  <link rel="stylesheet" type="text/css" href="loginStyle.css">
+
+  <!-- Vanilla JS replacing jQuery -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const forms = document.querySelectorAll("form");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn"></div>
+      <button type="button" class="toggle-btn" style="color: #fff;">Log In</button>
+      <a href="/register" class="toggle-btn">Register</a>
+    </div>
+
+    <div class="social-icons">
+      <img src="images/icon/fb2.png" alt="Facebook">
+      <img src="images/icon/insta2.png" alt="Instagram">
+      <img src="images/icon/tt2.png" alt="Twitter">
+    </div>
+
+    <!-- Login Form -->
+    <form id="login" class="input-group" action="/login" method="POST">
+      <div class="inp">
+        <img src="images/icon/user.png" alt="User Icon">
+        <input type="text" name="username" id="identifier" class="input-field" placeholder="Username or Email"
+          style="width: 88%; border:none;" required>
+
+      </div>
+      <div class="inp">
+        <img src="images/icon/password.png" alt="Password Icon">
+        <input type="password" name="password" id="password" class="input-field" placeholder="Password"
+          style="width: 88%; border: none;" required>
+      </div>
+      <input type="checkbox" class="check-box">Remember Password
+      <button type="submit" class="submit-btn">Log In</button>
+    </form>
+
+    <div class="other" id="other">
+      <div class="instead">
+        <h3>or</h3>
+      </div>
+      <button class="connect" onclick="google()">
+        <img src="images/icon/google.png" alt="Google Icon"><span>Sign in with Google</span>
+      </button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
