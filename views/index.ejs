@@ -27,7 +27,7 @@
     <!-- Navigation Bar -->
     <header id="header">
         <nav>
-            <div class="logo"><img src="images/icon/Logo.png" alt="logo"></div>
+            <div class="logo" ><img src="images/icon/Logo.png" alt="logo"></div>
             <ul>
                 <li><a class="active" href="">Home</a></li>
                 <li><a href="#portfolio_section">Portfolio</a></li>
@@ -364,35 +364,36 @@
     </div>
 
     <!-- CONTACT US -->
-    <div class="diffSection" id="contactus_section">
-        <center>
-            <p style="font-size: 50px; padding: 100px">Contact Us</p>
-        </center>
-        <div class="csec"></div>
-        <div class="back-contact">
-            <div class="cc">
-                <form action="mailto:atultiwari6210@gmail.com" method="post" enctype="text/plain">
-                    <label>First Name <span class="imp">*</span></label><label style="margin-left: 185px">Last Name
-                        <span class="imp">*</span></label><br>
-                    <center>
-                        <input type="text" name="fname" style="margin-right: 10px; width: 175px"
-                            required="required"><input type="text" name="lname" style="width: 175px"
-                            required="required"><br>
-                    </center>
-                    <label>Email <span class="imp">*</span></label><br>
-                    <input type="email" name="mail" style="width: 100%" required="required"><br>
-                    <label>Message <span class="imp">*</span></label><br>
-                    <input type="text" name="message" style="width: 100%" required="required"><br>
-                    <label>Additional Details</label><br>
-                    <textarea name="additional"></textarea><br>
-                    <button type="submit" id="csubmit">Send Message</button>
-                </form>
-            </div>
+    <!-- CONTACT US -->
+<div class="diffSection" id="contactus_section">
+    <center>
+        <p style="font-size: 50px; padding: 100px">Contact Us</p>
+    </center>
+    <div class="csec"></div>
+    <div class="back-contact">
+        <div class="cc">
+            <form action="/contact" method="POST">
+                <label>First Name <span class="imp">*</span></label>
+                <label style="margin-left: 185px">Last Name <span class="imp">*</span></label><br>
+                <center>
+                    <input type="text" name="fname" style="margin-right: 10px; width: 160px" required="required">
+                    <input type="text" name="lname" style="width: 160px" required="required"><br>
+                </center>
+                <label>Email <span class="imp">*</span></label><br>
+                <input type="email" name="email" style="width: 100%" required="required"><br>
+                <label>Message <span class="imp">*</span></label><br>
+                <input type="text" name="message" style="width: 100%" required="required"><br>
+                <label>Additional Details</label><br>
+                <textarea name="additional"></textarea><br>
+                <button type="submit" id="csubmit">Send Message</button>
+            </form>
         </div>
     </div>
+</div>
+
 
     <!-- FEEDBACK -->
-    <div class="title2" id="feedBACK">
+    <!-- <div class="title2" id="feedBACK">
         <span>Give Feedback</span>
         <div class="shortdesc2">
             <p>Please share your valuable feedback to us</p>
@@ -401,9 +402,9 @@
 
     <div class="feedbox">
         <div class="feed">
-            <form action="mailto:atultiwari6210@gmail.com" method="post" enctype="text/plain">
+            <form action="/feedback" method="POST" enctype="text/plain">
                 <label>Your Name</label><br>
-                <input type="text" name="fname" class="fname" required="required"><br>
+                <input type="text" name="name" class="fname" required="required"><br>
                 <label>Email</label><br>
                 <input type="email" name="mail" required="required"><br>
                 <label>Additional Details</label><br>
@@ -411,7 +412,30 @@
                 <button type="submit" id="csubmit">Send Message</button>
             </form>
         </div>
-    </div>
+    </div> -->
+
+    <!-- FEEDBACK -->
+<!-- FEEDBACK -->
+   <div class="title2" id="feedBACK">
+       <span>Give Feedback</span>
+       <div class="shortdesc2">
+           <p>Please share your valuable feedback to us</p>
+       </div>
+   </div>
+
+   <div class="feedbox">
+       <div class="feed">
+           <form action="/submit-feedback" method="POST" enctype="application/x-www-form-urlencoded">
+               <label>Your Name</label><br>
+               <input type="text" name="name" class="fname" required="required"><br>
+               <label>Email</label><br>
+               <input type="email" name="mail" required="required"><br>
+               <label>Additional Details</label><br>
+               <textarea name="additional"></textarea><br>
+               <button type="submit" id="csubmit">Send Message</button>
+           </form>
+       </div>
+   </div>
 
     <!-- Sliding Information -->
     <marquee style="background: linear-gradient(to right, #d7086f, #4862b0); margin-top: 50px;" direction="left"
