@@ -9,13 +9,12 @@ const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 
 // MongoDB connection
-mongoose.connect('mongodb://127.0.0.1:27017/alphoverseDB', {
+mongoose.connect('mongodb+srv://anmoltiwari621:anmol01@cluster0.dsheiyt.mongodb.net/parking-management?retryWrites=true&w=majority&authSource=admin&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("MongoDB connection error:", err));
-
+  .then(() => console.log("✅ Connected to MongoDB"))
+  .catch(err => console.error("❌ MongoDB connection error:", err));
 // View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +47,7 @@ app.post('/register', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({ name, username, email, password: hashedPassword });
+    // console.log("@@@@", newUser);
     await newUser.save();
     res.send("User registered successfully!");
   } catch (err) {
@@ -97,7 +97,7 @@ app.post('/contact', async (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: 'atultiwari6210@gmail.com',
+    to: 'ialphoverse@gmail.com',
     subject: `Contact Form - ${fname} ${lname}`,
     text: `
       New contact form submission:
@@ -127,50 +127,50 @@ app.post('/contact', async (req, res) => {
 });
 
 app.post('/submit-feedback', async (req, res) => {
-       const { name, mail, additional } = req.body;
+  const { name, mail, additional } = req.body;
 
-       const transporter = nodemailer.createTransport({
-           service: 'gmail',
-           auth: {
-               user: process.env.EMAIL_USER,
-               pass: process.env.EMAIL_PASS,
-           }
-       });
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    }
+  });
 
-       const mailOptions = {
-           from: mail,
-           to: 'atultiwari6210@gmail.com',
-           subject: `Feedback Form Submission - ${name}`,
-           text: `
+  const mailOptions = {
+    from: mail,
+    to: 'ialphoverse@gmail.com',
+    subject: `Feedback Form Submission - ${name}`,
+    text: `
                New feedback form submission:
 
                Name: ${name}
                Email: ${mail}
                Additional Details: ${additional}
            `
-       };
+  };
 
-       try {
-           await new Promise((resolve, reject) => {
-               transporter.verify((error, success) => {
-                   if (error) {
-                       console.error("Transporter Setup Error:", error);
-                       reject(error);
-                   } else {
-                       console.log("Server is ready to take messages");
-                       resolve(success);
-                   }
-               });
-           });
+  try {
+    await new Promise((resolve, reject) => {
+      transporter.verify((error, success) => {
+        if (error) {
+          console.error("Transporter Setup Error:", error);
+          reject(error);
+        } else {
+          console.log("Server is ready to take messages");
+          resolve(success);
+        }
+      });
+    });
 
-           await transporter.sendMail(mailOptions);
-           res.send(`<script>alert('Message sent successfully!'); window.location.href = '/';</script>`);
-           res.render('index')
-       } catch (error) {
-           console.error("Feedback form error:", error);
-           res.status(500).send(`<script>alert('Failed to send message. Please try again later.'); window.location.href = '/';</script>`);
-       }
-   });
+    await transporter.sendMail(mailOptions);
+    res.send(`<script>alert('Message sent successfully!'); window.location.href = '/';</script>`);
+    res.render('index')
+  } catch (error) {
+    console.error("Feedback form error:", error);
+    res.status(500).send(`<script>alert('Failed to send message. Please try again later.'); window.location.href = '/';</script>`);
+  }
+});
 
 // Server start
 const PORT = process.env.PORT || 3000;
