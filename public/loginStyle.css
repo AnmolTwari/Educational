@@ -204,3 +204,93 @@ span
 	padding: 10px;
 	font-size: 15px;
 }
+/* --------- MEDIA QUERIES --------- */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .form-box {
+    width: 90%;
+    height: auto;
+    margin: 10% auto;
+  }
+
+  .input-group {
+    top: 150px;
+    width: 90%;
+  }
+
+  .button-box {
+    width: 60%;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .other {
+    margin-top: 200px;
+  }
+
+  .connect {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .connect img {
+    width: 20px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .form-box {
+    width: 95%;
+    height: auto;
+    margin: 20% auto;
+    padding: 10px;
+  }
+
+  .button-box {
+    flex-direction: column;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .toggle-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .input-group {
+    width: 100%;
+    position: relative;
+    top: auto;
+  }
+
+  .inp img {
+    width: 16px;
+  }
+
+  .input-field {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .social-icons img {
+    width: 24px;
+    margin: 0 5px;
+  }
+
+  .connect span {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .other {
+    margin-top: 100px;
+  }
+}

@@ -854,69 +854,313 @@ footer .btn:hover {
 	opacity: .7;
 }
 
-/*PROPERTIES FOR MAKING WEBSITE RESPONSIVE*/
-@media screen and (max-width: 960px) {
-	.footer-container {
-		max-width: 600px;
-	}
-	.right-col {
-		width: 100%;
-		margin-bottom: 60px;
-	}
-	.left-col {
-		width: 100%;
-		text-align: center;
-	}
-	.social-media {
-		display: flex;
-		justify-content: center;
-	}
-	.logo {
-		transition: 1s;
-		margin-left: 30%;
-	}
-	nav ul, .srch, .get-started{
-		display: none;
-	}
-	.menu {
-		display: block;
-	}
-	nav {
-		padding-bottom: 20px;
-		border-bottom: 1px solid #0005;
-		/* position: fixed; */
-		/* top: 0; */
-	}
-	.quote p, .quote h5, .play {
-		justify-content: center;
-		text-align: center;
-	}
-	.quote p {
-		font-size: 30px;
-	}
-	.service-container .right-side img {
-		width: 90%;
-	}
-	.title {
-		margin-top: 0px;
-	}
-	
-}
-@media screen and (max-width: 700px) {
-	footer .btn{
-		margin: 0;
-		width: 100%;
-		margin-top: 20px;
-	}
-	.svg-image img {
-		width: 90%;
-		margin: 20px;
-		/* align-self: center; */
-	}
+/* PROPERTIES FOR MAKING WEBSITE RESPONSIVE */
+
+/* Large screens (up to 1200px) */
+@media screen and (max-width: 1200px) {
+    .head-container {
+        margin-top: 200px;
+        justify-content: center;
+    }
+    .quote {
+        width: 500px;
+    }
+    .quote p {
+        font-size: 40px;
+    }
+    .svg-image img {
+        width: 400px;
+    }
+    .about-content .side-text {
+        width: 450px;
+        padding: 30px 20px;
+    }
+    .about-content .side-image img {
+        width: 80%;
+    }
+    .smbox span {
+        padding: 20px 30px;
+    }
+    .service-swipe .s-card {
+        width: 300px;
+        height: 180px;
+    }
+    .feed {
+        width: 600px;
+    }
+    footer .footer-container {
+        max-width: 1000px;
+    }
 }
 
-@media screen and (max-width: 1000px) {	
-	.feedbox form input, .feedbox form .fname{
-		width: 100%;
-	}
+/* Medium screens (up to 960px) */
+@media screen and (max-width: 960px) {
+    .footer-container {
+        max-width: 600px;
+    }
+    .right-col {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+    .left-col {
+        width: 100%;
+        text-align: center;
+    }
+    .social-media {
+        display: flex;
+        justify-content: center;
+    }
+    .logo {
+        transition: 1s;
+        margin-left: 30%;
+    }
+    nav ul, .srch, .get-started {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    nav {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #0005;
+    }
+    .quote p, .quote h5, .play {
+        justify-content: center;
+        text-align: center;
+    }
+    .quote {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .quote p {
+        font-size: 30px;
+    }
+    .svg-image img {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .service-swipe .s-card {
+        width: 90%;
+        margin: 20px 0;
+    }
+    .title {
+        margin-top: 0px;
+        font-size: 25px;
+    }
+    .about-content {
+        flex-direction: column;
+    }
+    .about-content .side-text, .about-content .side-image {
+        width: 100%;
+        transform: translateX(0);
+        opacity: 1;
+        padding: 20px;
+    }
+    .about-content .side-text {
+        box-shadow: none;
+    }
+    .totalcard .card {
+        width: 90%;
+        margin: 20px 0;
+    }
+    .rev-container .rev-card {
+        width: 90%;
+        height: auto;
+    }
+    .feed {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+/* Tablets (up to 768px) */
+@media screen and (max-width: 768px) {
+    header {
+        height: 80vh;
+    }
+    .head-container {
+        margin-top: 150px;
+        flex-direction: column;
+    }
+    .quote p {
+        font-size: 25px;
+    }
+    .quote h5 {
+        font-size: 16px;
+    }
+    .svg-image img {
+        width: 80%;
+    }
+    .diffSection .content {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .smbox span {
+        margin: 2%;
+        padding: 15px 25px;
+    }
+    .smbox .data {
+        font-size: 60px;
+    }
+    .smbox .det {
+        font-size: 16px;
+    }
+    .cbox .det {
+        width: 200px;
+    }
+    .cbox .det a {
+        width: 100%;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .service-swipe .s-card {
+        width: 80%;
+        height: 160px;
+    }
+    .service-swipe .s-card p {
+        font-size: 1em;
+    }
+    .cc {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+    .back-contact {
+        flex-direction: column;
+        transform: translateY(0);
+    }
+    .csec {
+        height: 200px;
+    }
+    .title2 {
+        margin-left: 20px;
+        font-size: 25px;
+    }
+    .feedbox {
+        padding: 30px 20px;
+    }
+    footer .txtb, footer .btn {
+        width: 100%;
+        margin-left: 0;
+    }
+    footer .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* Small screens (up to 576px) */
+@media screen and (max-width: 576px) {
+    .logo img {
+        width: 100px;
+    }
+    .quote p {
+        font-size: 20px;
+    }
+    .quote h5 {
+        font-size: 14px;
+    }
+    .svg-image img {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .extra p {
+        font-size: 30px;
+        padding: 20px;
+        padding-bottom: 100px;
+    }
+    .smbox span {
+        padding: 10px 20px;
+    }
+    .smbox .data {
+        font-size: 50px;
+    }
+    .smbox .det {
+        font-size: 14px;
+    }
+    .cbox .det {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .totalcard .card {
+        width: 100%;
+    }
+    .service-swipe .s-card {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    .service-swipe .s-card img {
+        width: 80px;
+    }
+    .cc form input, .cc form textarea {
+        width: 100%;
+    }
+    .rev-container .rev-card {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    .identity {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .identity img {
+        width: 80px;
+        height: 80px;
+    }
+    .rev-cont {
+        width: 100%;
+    }
+    .feed form input, .feed form .fname, .feed form textarea {
+        width: 100%;
+    }
+    .title2 {
+        margin-top: 100px;
+        margin-left: 10px;
+    }
+    .title2 span {
+        font-size: 25px;
+    }
+    .title2 .shortdesc2 {
+        font-size: 14px;
+    }
+    .marqu {
+        font-size: 16px;
+    }
+}
+
+/* Extra small screens (up to 320px) */
+@media screen and (max-width: 320px) {
+    .logo {
+        margin-left: 20%;
+    }
+    .quote p {
+        font-size: 18px;
+    }
+    .quote h5 {
+        font-size: 12px;
+    }
+    .smbox span {
+        padding: 8px 15px;
+    }
+    .smbox .data {
+        font-size: 40px;
+    }
+    .smbox .det {
+        font-size: 12px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .service-swipe .s-card p {
+        font-size: 0.9em;
+    }
+    footer .right-col h1 {
+        font-size: 20px;
+    }
+    footer .txtb, footer .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }

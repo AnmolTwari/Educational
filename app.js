@@ -9,12 +9,12 @@ const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://anmoltiwari621:anmol01@cluster0.dsheiyt.mongodb.net/parking-management?retryWrites=true&w=majority&authSource=admin&appName=Cluster0', {
+mongoose.connect('mongodb+srv://anmoltiwari621:DNrCgVzGOpeWDvLU@cluster0.3r8bngn.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch(err => console.error("❌ MongoDB connection error:", err));
+.then(() => console.log("✅ Connected to MongoDB"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
 // View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -63,6 +63,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Login handler
+// Login handler (Updated)
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
@@ -71,17 +72,29 @@ app.post('/login', async (req, res) => {
       $or: [{ email: username }, { username: username }]
     });
 
-    if (!user) return res.send('Invalid Credentials.');
+    if (!user) {
+      return res.send(`<script>alert('❌ Invalid Credentials.'); window.location.href = '/login';</script>`);
+    }
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.send('Invalid Credentials.');
+    if (!isMatch) {
+      return res.send(`<script>alert('❌ Invalid Credentials.'); window.location.href = '/login';</script>`);
+    }
 
-    res.render('index', { user });
+    // ✅ Redirect to dashboard with user name in query string
+    res.redirect(`/dashboard?user=${encodeURIComponent(user.name)}`);
   } catch (err) {
     console.error("Login Error:", err);
-    res.send('Server error.');
+    res.send(`<script>alert('⚠️ Server error. Please try again later.'); window.location.href = '/login';</script>`);
   }
 });
+
+// Dashboard route (NEW)
+app.get('/dashboard', (req, res) => {
+  const user = { name: req.query.user || "Guest" };
+  res.render('index', { user });
+});
+
 
 // Contact form handler
 app.post('/contact', async (req, res) => {
